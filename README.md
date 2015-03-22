@@ -15,7 +15,7 @@ The purpose of this project is to demonstrate my ability to collect, work with, 
 - Readme: This file!
 
 ###Overview and Notes
-My project uses a single script (RunAnalysis.R) to execute all five steps of the course project and create a tidy data file (“and f”). 
+My project uses a single script (RunAnalysis.R) to execute all five steps of the course project and create a tidy data file. 
 For evaluation, the tidy data file can be read back into R using 
 
 *data <- read.table("TidyDataFile.txt", header = TRUE)*  
