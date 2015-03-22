@@ -50,7 +50,7 @@ The *RunAnalysis.R* script follows the steps below:
     + Activity data from subject_test and subject_train text files are read into individual data frames
     + A combined dataset (subjectcombined: 10299x1) is created with the correct column name.  
 * __Step 2__: Extract only measurements on mean and standard deviation for each observation. I extract measurements where variable names exactly match “mean()” and “std()”, using grepl. This results in a dataset (meanstddata: 10299x66).  I then combine subject, activity, meanstddata to form a new dataset (newdata: 10299x68).  
-* Note that since I use exact matching variables that contain mean in the variable name but don’t measure the mean such as meanFreq() are not extracted.*
+    + *Note that since I use exact matching variables that contain mean in the variable name but don’t measure the mean such as meanFreq() are not extracted.*
 * __Step 3__: Use descriptive activity names to name activities in the dataset. Using as.factor and levels, I map the activities in the Activity column of newdata to the six descriptive labels. 
 * __Step 4__: Appropriately label the dataset with descriptive variable names. I perform a few transformations on the variable names with gsub to make them legal and easily understood variable names in R.  
 The transformations are: 
