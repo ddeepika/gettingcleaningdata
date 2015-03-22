@@ -5,9 +5,9 @@ The purpose of this project is to demonstrate my ability to collect, work with, 
 
 ##Study Design
 ###Raw data files that were provided include
-1. test and training data sets for measurement (Xtest (2947x561), Xtrain (7352x561))
-2. test and training data sets for activity (ytest (2947x561), ytrain (7352x561))
-3. test and training data sets for subjects (subjecttest (2947x561), subjecttrain (7352x561))
+1. test and training data sets for measurement (X_test (2947x561), X_train (7352x561))
+2. test and training data sets for activity (y_test (2947x561), y_train (7352x561))
+3. test and training data sets for subjects (subject_test (2947x561), subject_train (7352x561))
 4. list of 561 measurement variables (features (561x2))
 5. explanation of measurement variables (features_info)
 6. list of 6 activity labels (activity_labels)
@@ -33,7 +33,7 @@ The purpose of this project is to demonstrate my ability to collect, work with, 
    + *updated data: newdata (10299x68)*
 5. Create independent tidy data set with the average of each variable for each activity and each subject
     + Reshape data such that for each activity-subject combination (6x30 = 180 rows) the mean measurement value (for 66 measurements) is calculated
-    + updated data: tidydata (10299x68)
+    + *updated data: tidydata (180x68)*
 
 ##Data Dictionary
 ###Variables in Tidy Data File
@@ -54,7 +54,7 @@ The measurement values are based on raw Time and Frequency values of acceleromet
     + Time.BodyAccJerk.mean.X
     + Time.BodyAccJerk.mean.Y
     + Time.BodyAccJerk.mean.Z
-    + Time.BodyGyro.mean.X"
+    + Time.BodyGyro.mean.X
     + Time.BodyGyro.mean.Y
     + Time.BodyGyro.mean.Z
     + Time.BodyGyroJerk.mean.X
