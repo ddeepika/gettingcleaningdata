@@ -21,7 +21,7 @@ For evaluation, the tidy data file can be read back into R using
 *data <- read.table("TidyDataFile.txt", header = TRUE)*  
 *View(data)*
 
-Note: If file is stored in a different path than the working folder, please provide fill path in the read.table call.
+Note: If file is stored in a different path than the working folder, please provide file path in the read.table call.
 
 The codebook for this project follows the format suggested by TA in
 * https://class.coursera.org/getdata-012/forum/thread?thread_id=9 to refer  
@@ -40,7 +40,7 @@ The *RunAnalysis.R* script follows the steps below:
     + Measurement data from X_test,  X_train text files are read into individual data frames. 
     + Column names for the measurement data are read from features text file into another data frame.
     + Column names are applied to both test and training data sets
-    + A combined dataset (xcombined: 10299x561) is created with the test and training data sets. Dimensions
+    + A combined dataset (xcombined: 10299x561) is created with the test and training data sets.
 
   + 1.b Merge activity data with correct column name
     + Activity data from y_test and y_train text files are read into individual data frames
@@ -50,7 +50,7 @@ The *RunAnalysis.R* script follows the steps below:
     + Activity data from subject_test and subject_train text files are read into individual data frames
     + A combined dataset (subjectcombined: 10299x1) is created with the correct column name.  
 * __Step 2__: Extract only measurements on mean and standard deviation for each observation. I extract measurements where variable names exactly match “mean()” and “std()”, using grepl. This results in a dataset (meanstddata: 10299x66).  I then combine subject, activity, meanstddata to form a new dataset (newdata: 10299x68).  
-    + *Note that since I use exact matching variables that contain mean in the variable name but don’t measure the mean such as meanFreq() are not extracted.*
+    + *Note that since I use exact matching, I don’t extract variables that contain mean in the variable name but don’t measure the mean (such as meanFreq()).*
 * __Step 3__: Use descriptive activity names to name activities in the dataset. Using as.factor and levels, I map the activities in the Activity column of newdata to the six descriptive labels. 
 * __Step 4__: Appropriately label the dataset with descriptive variable names. I perform a few transformations on the variable names with gsub to make them legal and easily understood variable names in R.  
 The transformations are: 
